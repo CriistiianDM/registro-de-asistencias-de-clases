@@ -1,0 +1,31 @@
+{
+  "header": {
+      "0": {
+        "cls-1": "box-header",
+        "cls-2": "Attendance-style",
+        "cls-3": "box-login",
+        "cls-4": "style-login",
+        "title": "Attendance"   
+      }
+  },
+  "footer": {
+      "0": {
+        "cls-1": "box-footer",
+        "cls-2": "box-footer-content",
+        "cls-3": "box-footer-derechos",
+        "text-footer": " Derechos Reservados @2021-2022 Cristian Duvan Machado Mosquera"
+      }
+  },
+  "slider": {
+      "0": {
+          "cls-1": "box-slider",
+          "cls-2": "box-slider-content",
+          "cls-3": "box-slider-circle",
+          "cls-4": "circle-style",
+          "cls-5": "box-slider-aux-1",
+          "cls-6": "box-slider-aux-2",
+          "cls-7": "box-slider-aux-3"
+      }
+  }
+  
+}

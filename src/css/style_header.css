@@ -1,0 +1,40 @@
+
+.box-header {
+    display: grid;
+    position: fixed;
+    top: 0;
+    grid-template-rows: 100%;
+    grid-template-columns: 10% 80% 10%;
+    height: 5em;
+    width: 100%;
+    background-color: #d11f1f;
+    overflow: hidden;
+    z-index: 8;
+}
+
+.Attendance-style {
+    justify-self: center;
+    align-self: center;
+    color: aliceblue;
+    font-size: 4em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.box-login {
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 100%;
+    height: 100%;
+    width: 100%;
+}
+
+.style-login {
+    justify-self: center;
+    align-self: center;
+    color: aliceblue;
+    font-size: 2.5em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+

@@ -1,7 +1,10 @@
 /**
  *  @decs import libs
- */
- import React , { useState } from "react";
+*/
+import React  from "react";
+import { Header } from "../components-inicio/Header";
+import { Footer } from "../components-inicio/Footer";
+import { Slider } from "../components-inicio/Slider";
 
 /** 
   *  @author : cristian duvan machado <cristian.machado@correounivalle.edu.co>
@@ -11,6 +14,10 @@ export function Inicio() {
   
      // return component of the app
      return (
-        <h1>HOLA</h1>
+        <>
+        <Header />
+        <Slider />
+        <Footer />
+        </>
      );
  }
