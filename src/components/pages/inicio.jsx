@@ -19,12 +19,13 @@ export function Inicio() {
      const state_cajaBox1 = Object.values(Object.values(json)[3])[0]
      const state_cajaBox2 = Object.values(Object.values(json)[3])[1]
      const state_cajaBox3 = Object.values(Object.values(json)[3])[2]
+     const state_toggleLogin = Object.values(Object.values(json)[4])[0]
      
      // return component of the app
      return (
         <>
         <Header />
-        <ToggleLogin />
+        <ToggleLogin properties={state_toggleLogin} />
         <Slider />
         <CajaBox  properties={state_cajaBox1} />
         <CajaBox  properties={state_cajaBox2} />

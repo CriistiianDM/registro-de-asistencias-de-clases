@@ -6,6 +6,7 @@ import $ from 'jquery';
 
 $(function () {
    $('#circle-1').addClass('active-boton')
+   syncronid_toogle()
    //event listener slider
    click_event_slider();
 
@@ -46,4 +47,15 @@ function click_event_slider() {
      $('.box-slider').addClass(nav_slider[index])
 
     });
+}
+
+/** 
+  *  @author : cristian duvan machado <cristian.machado@correounivalle.edu.co>
+  *  @decs app component
+*/
+function syncronid_toogle () {
+  $('.box-toggle-login').fadeIn(3000)
+  setTimeout( function() {
+    $('.box-toggle-login').fadeOut(1000)
+  }, 60000)
 }
