@@ -35,8 +35,13 @@
          "cls-4": "box-img-caja-content",
          "cls-5": "box-content-caja",
          "cls-6": "box-title-caja",
+         "cls-7": "box-title-caja-content",
          "icon-caja": 0,
-         "title": "Estudiantes"
+         "title": "Estudiantes",
+         "description": [
+              "Acceso a Calificaciones",
+              "Materias"
+          ]
     },
     "1": {
          "cls-1": "box-caja",
@@ -45,8 +50,13 @@
          "cls-4": "box-img-caja-content",
          "cls-5": "box-content-caja",
          "cls-6": "box-title-caja",
+         "cls-7": "box-title-caja-content",
          "icon-caja": 1,
-         "title": "Profesores"
+         "title": "Profesores",
+         "description": [
+              "Control Notas",
+              "Alumnos"
+          ]
     },
     "2": {
          "cls-1": "box-caja",
@@ -55,8 +65,12 @@
          "cls-4": "box-img-caja-content",
          "cls-5": "box-content-caja",
          "cls-6": "box-title-caja",
+         "cls-7": "box-title-caja-content",
          "icon-caja": 2,
-         "title": "Administrativos"
+         "title": "Administrativos",
+         "description": [
+              "Autoridad total sobre el Sistema"
+          ]
     }
   },
   "toggleLogin": {
