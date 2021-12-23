@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/registro-de-asistencias-de-clases/static/css/main.3dacd41b.css",
+    "main.js": "/registro-de-asistencias-de-clases/static/js/main.6c4ac6b4.js",
+    "static/media/slider_2.jpg": "/registro-de-asistencias-de-clases/static/media/slider_2.e8f7b8f5d8fe8265c754.jpg",
+    "static/media/slider_1.jpg": "/registro-de-asistencias-de-clases/static/media/slider_1.34bd58fb10f8ed8b1d63.jpg",
+    "static/media/slider_3.jpg": "/registro-de-asistencias-de-clases/static/media/slider_3.65ee640e9669d4271e60.jpg",
+    "static/media/Roboto-BoldItalic.ttf": "/registro-de-asistencias-de-clases/static/media/Roboto-BoldItalic.7f8b6363e90575e01654.ttf",
+    "static/media/Roboto-Bold.ttf": "/registro-de-asistencias-de-clases/static/media/Roboto-Bold.63311334b795ce3b76e2.ttf",
+    "static/media/Roboto-Italic.ttf": "/registro-de-asistencias-de-clases/static/media/Roboto-Italic.fed51269e045a3e4b6d2.ttf",
+    "static/media/Roboto-Regular.ttf": "/registro-de-asistencias-de-clases/static/media/Roboto-Regular.f25bd05915c1a3468d3d.ttf",
+    "static/media/Roboto-ThinItalic.ttf": "/registro-de-asistencias-de-clases/static/media/Roboto-ThinItalic.19c6ed4cc0c9f897bc4c.ttf",
+    "index.html": "/registro-de-asistencias-de-clases/index.html",
+    "main.3dacd41b.css.map": "/registro-de-asistencias-de-clases/static/css/main.3dacd41b.css.map",
+    "main.6c4ac6b4.js.map": "/registro-de-asistencias-de-clases/static/js/main.6c4ac6b4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3dacd41b.css",
+    "static/js/main.6c4ac6b4.js"
+  ]
+}
