@@ -9,6 +9,7 @@
    height: 87.8vh;
    background-image: url('../images/slider_1.jpg');
    background-size: 100% 100%;
+   box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
    overflow: hidden;
    z-index: 2;
 }
@@ -48,3 +49,4 @@
     background-color: aliceblue;
     border-radius: 10em;
 }
+

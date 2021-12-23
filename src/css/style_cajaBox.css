@@ -1,0 +1,71 @@
+
+.box-caja {
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 20% 60% 20%;
+    position: relative;
+    top: 8em;
+    width: 100%;
+    height: 20em;
+    overflow: hidden;
+}
+
+.box-caja-content {
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 30% 70%;
+    width: 100%;
+    height: 80%;
+    background-color: rgb(246, 248, 244);
+    border-radius: 3em;
+    border-width: 0.3em;
+    border-color: slategrey;
+    border-style: solid;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    align-items: flex-start;
+}
+
+.box-img-caja {
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 100%;
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 3em;
+    border-bottom-left-radius: 3em;
+    border-right-color: slategrey;
+    border-left-color: transparent;
+    border-top-color: transparent;
+    border-style: solid;
+
+}
+
+.box-img-caja-content {
+    justify-self: center;
+    align-self: center;
+    width: 100%;
+    height: 100%;
+    font-size: 8em;
+    color: gray;
+}
+
+.box-content-caja {
+    display: grid;
+    grid-template-rows: 15% 85%;
+    grid-template-columns: 100%;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-items: center;
+}
+
+.box-title-caja {
+    text-align: center;
+    width: 100%;
+    height: 80%;
+    font-size: 2.5em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: gray;
+}

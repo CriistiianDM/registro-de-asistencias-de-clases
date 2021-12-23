@@ -4,9 +4,10 @@
     position: fixed;
     top: 0;
     grid-template-rows: 100%;
-    grid-template-columns: 10% 80% 10%;
+    grid-template-columns: 10% 70% 20%;
     height: 5em;
     width: 100%;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
     background-color: #d11f1f;
     overflow: hidden;
     z-index: 8;
@@ -37,4 +38,6 @@
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
 }
+
+
 

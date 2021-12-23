@@ -18,7 +18,7 @@ export function Header() {
              <div></div>
              <div className={state_header["cls-2"]}>{state_header.title}</div>
              <div className={state_header["cls-3"]}>
-                <FontAwesomeIcon icon={faUser}  className={state_header["cls-4"]} />
+                <FontAwesomeIcon icon={ faUser }  className={state_header["cls-4"]} />
              </div>
         </header>
     );

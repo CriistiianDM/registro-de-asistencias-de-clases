@@ -26,6 +26,38 @@
           "cls-6": "box-slider-aux-2",
           "cls-7": "box-slider-aux-3"
       }
+  },
+  "cajaBox": {
+    "0": {
+         "cls-1": "box-caja",
+         "cls-2": "box-caja-content",
+         "cls-3": "box-img-caja",
+         "cls-4": "box-img-caja-content",
+         "cls-5": "box-content-caja",
+         "cls-6": "box-title-caja",
+         "icon-caja": 0,
+         "title": "Estudiantes"
+    },
+    "1": {
+         "cls-1": "box-caja",
+         "cls-2": "box-caja-content",
+         "cls-3": "box-img-caja",
+         "cls-4": "box-img-caja-content",
+         "cls-5": "box-content-caja",
+         "cls-6": "box-title-caja",
+         "icon-caja": 1,
+         "title": "Profesores"
+    },
+    "2": {
+         "cls-1": "box-caja",
+         "cls-2": "box-caja-content",
+         "cls-3": "box-img-caja",
+         "cls-4": "box-img-caja-content",
+         "cls-5": "box-content-caja",
+         "cls-6": "box-title-caja",
+         "icon-caja": 2,
+         "title": "Administrativos"
+    }
   }
-  
+ 
 }

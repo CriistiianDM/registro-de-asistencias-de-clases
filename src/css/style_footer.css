@@ -7,6 +7,7 @@
     height: 7em;
     width: 100%;
     background-color: #333232;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
     overflow: hidden;
     z-index: 5;
 }
