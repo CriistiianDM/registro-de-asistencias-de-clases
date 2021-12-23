@@ -6,7 +6,7 @@
     right: 4%;
     width: 10em;
     height: 10em;
-    background-color: #f5f5f5;
+    background-color: white;
     border-radius: 1em;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
     z-index: 9;
@@ -18,7 +18,7 @@
     position: absolute;
     top: -0.8em;
     right: 37%;
-    border-top: 15px solid #f5f5f5;
+    border-top: 15px solid white;
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
     transform: rotate(180deg);
@@ -37,12 +37,23 @@
 
 .box-toggle-login-button {
     width: 80%;
-    height: 50%;
+    height: 40%;
     border-radius: 3em;
-    background-color: rgb(184, 15, 15);
-    box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
+    background-color: #E2093C;
+    box-shadow: 0 0 7px rgba(185, 183, 183, 0.5);
     color: white;
-    font-size: 1.5em;
+    font-size: 1.2em;
+    font-family: 'Roboto', sans-serif;
     text-align: center;
     padding-top: 0.2em;
+}
+
+#boton-toggle1 {
+   position: relative;
+   top: 0.7em;
+}
+
+#boton-toggle2 {
+   position: relative;
+   top: -0.7em;
 }

@@ -7,7 +7,7 @@ import { style } from './css/style.css';
 import eventListener from './js/event_lister.js';
 
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Routes,
   Route,
   link
