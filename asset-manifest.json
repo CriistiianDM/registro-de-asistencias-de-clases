@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/registro-de-asistencias-de-clases/static/css/main.3dacd41b.css",
-    "main.js": "/registro-de-asistencias-de-clases/static/js/main.6c4ac6b4.js",
+    "main.js": "/registro-de-asistencias-de-clases/static/js/main.150d1946.js",
     "static/media/slider_2.jpg": "/registro-de-asistencias-de-clases/static/media/slider_2.e8f7b8f5d8fe8265c754.jpg",
     "static/media/slider_1.jpg": "/registro-de-asistencias-de-clases/static/media/slider_1.34bd58fb10f8ed8b1d63.jpg",
     "static/media/slider_3.jpg": "/registro-de-asistencias-de-clases/static/media/slider_3.65ee640e9669d4271e60.jpg",
@@ -12,10 +12,10 @@
     "static/media/Roboto-ThinItalic.ttf": "/registro-de-asistencias-de-clases/static/media/Roboto-ThinItalic.19c6ed4cc0c9f897bc4c.ttf",
     "index.html": "/registro-de-asistencias-de-clases/index.html",
     "main.3dacd41b.css.map": "/registro-de-asistencias-de-clases/static/css/main.3dacd41b.css.map",
-    "main.6c4ac6b4.js.map": "/registro-de-asistencias-de-clases/static/js/main.6c4ac6b4.js.map"
+    "main.150d1946.js.map": "/registro-de-asistencias-de-clases/static/js/main.150d1946.js.map"
   },
   "entrypoints": [
     "static/css/main.3dacd41b.css",
-    "static/js/main.6c4ac6b4.js"
+    "static/js/main.150d1946.js"
   ]
 }
