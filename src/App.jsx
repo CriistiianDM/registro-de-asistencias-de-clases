@@ -19,11 +19,11 @@ import {
   *  @decs app component
 */
 export function App() {
-  
+ 
   return(
     <Router>
       <Routes>
-        <Route path="/" element={<Inicio />} />
+        <Route exact path="/" element={<Inicio />} />
       </Routes>
     </Router>
   );
