@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/registro-de-asistencias-de-clases/static/css/main.b55bb924.css",
-    "main.js": "/registro-de-asistencias-de-clases/static/js/main.24c25cf5.js",
+    "main.css": "/registro-de-asistencias-de-clases/static/css/main.c27376b2.css",
+    "main.js": "/registro-de-asistencias-de-clases/static/js/main.49737dfb.js",
     "static/media/slider_2.jpg": "/registro-de-asistencias-de-clases/static/media/slider_2.e8f7b8f5d8fe8265c754.jpg",
     "static/media/slider_1.jpg": "/registro-de-asistencias-de-clases/static/media/slider_1.34bd58fb10f8ed8b1d63.jpg",
     "static/media/slider_3.jpg": "/registro-de-asistencias-de-clases/static/media/slider_3.65ee640e9669d4271e60.jpg",
@@ -10,12 +10,13 @@
     "static/media/Roboto-Italic.ttf": "/registro-de-asistencias-de-clases/static/media/Roboto-Italic.fed51269e045a3e4b6d2.ttf",
     "static/media/Roboto-Regular.ttf": "/registro-de-asistencias-de-clases/static/media/Roboto-Regular.f25bd05915c1a3468d3d.ttf",
     "static/media/Roboto-ThinItalic.ttf": "/registro-de-asistencias-de-clases/static/media/Roboto-ThinItalic.19c6ed4cc0c9f897bc4c.ttf",
+    "static/media/estudiante.png": "/registro-de-asistencias-de-clases/static/media/estudiante.4d2316d7f02b0ec05cb1.png",
     "index.html": "/registro-de-asistencias-de-clases/index.html",
-    "main.b55bb924.css.map": "/registro-de-asistencias-de-clases/static/css/main.b55bb924.css.map",
-    "main.24c25cf5.js.map": "/registro-de-asistencias-de-clases/static/js/main.24c25cf5.js.map"
+    "main.c27376b2.css.map": "/registro-de-asistencias-de-clases/static/css/main.c27376b2.css.map",
+    "main.49737dfb.js.map": "/registro-de-asistencias-de-clases/static/js/main.49737dfb.js.map"
   },
   "entrypoints": [
-    "static/css/main.b55bb924.css",
-    "static/js/main.24c25cf5.js"
+    "static/css/main.c27376b2.css",
+    "static/js/main.49737dfb.js"
   ]
 }
