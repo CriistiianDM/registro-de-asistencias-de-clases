@@ -2,8 +2,7 @@
  *  @decs import libs
 */
 import $ from 'jquery';
-
-
+  
 $(function () {
    $('#circle-1').addClass('active-boton')
    syncronid_toogle()
@@ -59,3 +58,5 @@ function syncronid_toogle () {
     $('.box-toggle-login').fadeOut(1000)
   }, 60000)
 }
+
+

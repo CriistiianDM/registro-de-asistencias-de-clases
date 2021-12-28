@@ -1,76 +1,85 @@
 {
   "header": {
-      "0": {
-        "cls-1": "box-header",
-        "cls-2": "Attendance-style",
-        "cls-3": "box-login",
-        "cls-4": "style-login",
-        "title": "Attendance"   
-      }
+    "0": {
+      "cls-1": "box-header",
+      "cls-2": "Attendance-style",
+      "cls-3": "box-login",
+      "cls-4": "style-login",
+      "icon-caja": 0,
+      "title": "Attendance"
+    },
+    "1": {
+      "cls-1": "box-header",
+      "cls-2": "Attendance-style",
+      "cls-3": "box-login",
+      "cls-4": "style-login",
+      "icon-caja": 1,
+      "title": "Attendance"
+    }
   },
   "footer": {
-      "0": {
-        "cls-1": "box-footer",
-        "cls-2": "box-footer-content",
-        "cls-3": "box-footer-derechos",
-        "text-footer": " Derechos Reservados @2021-2022 Cristian Duvan Machado Mosquera"
-      }
+    "0": {
+      "cls-1": "box-footer",
+      "cls-2": "box-footer-content",
+      "cls-3": "box-footer-derechos",
+      "text-footer": " Derechos Reservados @2021-2022 Cristian Duvan Machado Mosquera"
+    }
   },
   "slider": {
-      "0": {
-          "cls-1": "box-slider",
-          "cls-2": "box-slider-content",
-          "cls-3": "box-slider-circle",
-          "cls-4": "circle-style",
-          "cls-5": "box-slider-aux-1",
-          "cls-6": "box-slider-aux-2",
-          "cls-7": "box-slider-aux-3"
-      }
+    "0": {
+      "cls-1": "box-slider",
+      "cls-2": "box-slider-content",
+      "cls-3": "box-slider-circle",
+      "cls-4": "circle-style",
+      "cls-5": "box-slider-aux-1",
+      "cls-6": "box-slider-aux-2",
+      "cls-7": "box-slider-aux-3"
+    }
   },
   "cajaBox": {
     "0": {
-         "cls-1": "box-caja",
-         "cls-2": "box-caja-content",
-         "cls-3": "box-img-caja",
-         "cls-4": "box-img-caja-content",
-         "cls-5": "box-content-caja",
-         "cls-6": "box-title-caja",
-         "cls-7": "box-title-caja-content",
-         "icon-caja": 0,
-         "title": "Estudiantes",
-         "description": [
-              "Acceso a Calificaciones",
-              "Materias"
-          ]
+      "cls-1": "box-caja",
+      "cls-2": "box-caja-content",
+      "cls-3": "box-img-caja",
+      "cls-4": "box-img-caja-content",
+      "cls-5": "box-content-caja",
+      "cls-6": "box-title-caja",
+      "cls-7": "box-title-caja-content",
+      "icon-caja": 0,
+      "title": "Estudiantes",
+      "description": [
+        "Acceso a Calificaciones",
+        "Materias"
+      ]
     },
     "1": {
-         "cls-1": "box-caja",
-         "cls-2": "box-caja-content",
-         "cls-3": "box-img-caja",
-         "cls-4": "box-img-caja-content",
-         "cls-5": "box-content-caja",
-         "cls-6": "box-title-caja",
-         "cls-7": "box-title-caja-content",
-         "icon-caja": 1,
-         "title": "Profesores",
-         "description": [
-              "Control Notas",
-              "Alumnos"
-          ]
+      "cls-1": "box-caja",
+      "cls-2": "box-caja-content",
+      "cls-3": "box-img-caja",
+      "cls-4": "box-img-caja-content",
+      "cls-5": "box-content-caja",
+      "cls-6": "box-title-caja",
+      "cls-7": "box-title-caja-content",
+      "icon-caja": 1,
+      "title": "Profesores",
+      "description": [
+        "Control Notas",
+        "Alumnos"
+      ]
     },
     "2": {
-         "cls-1": "box-caja",
-         "cls-2": "box-caja-content",
-         "cls-3": "box-img-caja",
-         "cls-4": "box-img-caja-content",
-         "cls-5": "box-content-caja",
-         "cls-6": "box-title-caja",
-         "cls-7": "box-title-caja-content",
-         "icon-caja": 2,
-         "title": "Administrativos",
-         "description": [
-              "Autoridad total sobre el Sistema"
-          ]
+      "cls-1": "box-caja",
+      "cls-2": "box-caja-content",
+      "cls-3": "box-img-caja",
+      "cls-4": "box-img-caja-content",
+      "cls-5": "box-content-caja",
+      "cls-6": "box-title-caja",
+      "cls-7": "box-title-caja-content",
+      "icon-caja": 2,
+      "title": "Administrativos",
+      "description": [
+        "Autoridad total sobre el Sistema"
+      ]
     }
   },
   "toggleLogin": {
@@ -82,6 +91,23 @@
       "registrar": "Registrarse",
       "login": "Ingresar"
     }
+  },
+  "cajaText": {
+    "0": {
+      "cls-1": "box-caja-text",
+      "cls-2": "box-caja-text-title",
+      "cls-3": "box-caja-text-img",
+      "cls-4": "box-caja-text-content",
+      "cls-5": "caja-text-title",
+      "cls-6": "caja-text-login",
+      "cls-7": "box-caja-button-login",
+      "cls-8": "box-caja-button-login-content",
+      "cls-9": "caja-button-login-content",
+      "cls-10": "caja-button-login-text-olvidado",
+      "title-login": "Attendance",
+      "ingresar": "Ingresar",
+      "registrar": "Registrarse",
+      "olvido": "Olvidaste tu contraseña?"
+    }
   }
-  
 }
