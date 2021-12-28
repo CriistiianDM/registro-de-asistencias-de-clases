@@ -47,6 +47,7 @@
     width: 1.5em;
     height: 1.5em;
     background-color: aliceblue;
+    border-style: none;
     border-radius: 10em;
 }
 
