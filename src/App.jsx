@@ -2,15 +2,16 @@
  *  @decs import libs
 */
 import React from 'react';
-import {Inicio} from './components/pages/inicio';
+import {Inicio} from './components/pages/Inicio';
+import {Login} from './components/pages/Login';
 import { style } from './css/style.css';
-import eventListener from './js/event_lister.js';
+import style_header from "./css/style_header.css";
+
 
 import {
-  HashRouter as Router,
+  BrowserRouter as Router,
   Routes,
-  Route,
-  link
+  Route
 } from 'react-router-dom'
 
 
@@ -19,11 +20,13 @@ import {
   *  @decs app component
 */
 export function App() {
-  
+ 
   return(
-    <Router>
+    <Router basename='/registro-de-asistencias-de-clases'>
       <Routes>
-        <Route path="/" element={<Inicio />} />
+        <Route  path="/" element={<Inicio />} />
+        <Route  path="/login" element={<Login />} />
+        <Route  path="*" element={<h1>404</h1>} />
       </Routes>
     </Router>
   );
