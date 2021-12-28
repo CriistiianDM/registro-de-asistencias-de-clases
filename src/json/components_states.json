@@ -33,7 +33,8 @@
       "cls-4": "circle-style",
       "cls-5": "box-slider-aux-1",
       "cls-6": "box-slider-aux-2",
-      "cls-7": "box-slider-aux-3"
+      "cls-7": "box-slider-aux-3",
+      "cls-8": "circle-style active-boton"
     }
   },
   "cajaBox": {

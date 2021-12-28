@@ -2,13 +2,17 @@
  *  @decs import libs
 */
 import $ from 'jquery';
-  
+import React  from "react";
+
+
+
 $(function () {
+ 
    $('#circle-1').addClass('active-boton')
    syncronid_toogle()
    //event listener slider
    click_event_slider();
-
+  
 });
 
 
