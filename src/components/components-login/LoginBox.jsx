@@ -23,8 +23,8 @@ export function LoginBox(props) {
 
             <div className={state_caja_text["cls-4"]}>
                 <div></div>
-                <input className={state_caja_text["cls-6"]} type="text" placeholder="" />
-                <input className={state_caja_text["cls-6"]} type="password" placeholder="" />
+                <input className={state_caja_text["cls-6"]} type="text" placeholder="Nombre usuario" />
+                <input className={state_caja_text["cls-6"]} type="password" placeholder="Contraseña" />
 
                 <div className={state_caja_text["cls-7"]}>
                     <div className={state_caja_text["cls-8"]}>
