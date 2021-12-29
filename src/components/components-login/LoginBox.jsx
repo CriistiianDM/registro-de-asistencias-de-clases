@@ -29,7 +29,7 @@ export function LoginBox(props) {
                 <div className={state_caja_text["cls-7"]}>
                     <div className={state_caja_text["cls-8"]}>
                         <Link to="/" className={state_caja_text["cls-9"]} id="login-1">{state_caja_text["ingresar"]}</Link>
-                        <Link to="/" className={state_caja_text["cls-9"]} id="login-2">{state_caja_text["registrar"]}</Link>
+                        <Link to="/register" className={state_caja_text["cls-9"]} id="login-2">{state_caja_text["registrar"]}</Link>
                     </div>
                     <div className={state_caja_text["cls-10"]}>{state_caja_text["olvido"]}</div>
                 </div>
