@@ -110,5 +110,26 @@
       "registrar": "Registrarse",
       "olvido": "Olvidaste tu contraseña?"
     }
+  },
+  "registro": {
+    "0": {
+      "cls-1": "box-registro",
+      "cls-2": "box-registro-title",
+      "cls-3": "box-img-registro",
+      "cls-4": "registro-title",
+      "cls-5": "box-registro-content",
+      "cls-6": "box-registro-nombre",
+      "cls-7": "style-box-registro",
+      "cls-8": "box-select-registro",
+      "cls-9": "box-registro-select",
+      "cls-10": "box-registro-select-rol",
+      "cls-11": "box-registro-select-email",
+      "cls-12": "style-registro-button",
+      "title": "Attendance",
+      "selecionRol": "Seleccione un Rol:",
+      "enviar": "Enviar",
+      "value-1": "Estudiante",
+      "value-2": "Profesor"
+    }
   }
 }
