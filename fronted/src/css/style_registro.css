@@ -152,22 +152,30 @@
     border-color: #BEBEBE;
 }
 
+.style-correcto {
+    border-color: green !important;
+}
+
+.style-incorrecto {
+    border-color: red !important;
+}
 
 .style-box-registro:focus {
     outline: none;
 }
-    
-#email-1 {
-   width: 90% !important;
+  
+#correo , #cuenta_id {
+   width: 80% !important;
    align-self: flex-start;
 }
 
-#input-1 {
+
+#p_nombre {
     justify-self: center;
     align-self: end;
 }
 
-#input-2 {
+#s_nombre {
     justify-self: center;
     align-self: end;
 }
