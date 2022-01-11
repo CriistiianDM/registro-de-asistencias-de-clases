@@ -25,7 +25,7 @@ CREATE TABLE personas (
     s_nombre varchar(30),
     p_apellido varchar(30) not null,
     s_apellido varchar(30),
-    dirrecion varchar(30) UNIQUE not null,
+    dirrecion varchar(30),
     tipo_persona varchar(10) not null,
     foreign key (identificacion) references cuentas(cuenta_id)
 )

@@ -10,7 +10,7 @@ const router = Router();
 router.get('/register/:id',  getTask);
 
 //method post
-router.post('/', postTask);
+router.post('/register', postTask);
 
 //method put
 router.put('/',  putTask);
@@ -18,6 +18,9 @@ router.put('/',  putTask);
 //method delete
 router.delete('/', deleteTask);
 
+router.get('*', (req, res) => {
+    res.send('404 not found') }
+);
 
 //exportar el router
 module.exports = router;
