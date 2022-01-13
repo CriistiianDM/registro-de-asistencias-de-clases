@@ -22,6 +22,7 @@ export function RegistroBox(props) {
     });
 
     const [data_usuario, set_data_usuario] = useState([])
+      
 
     let state_registro = props.properties
 
@@ -35,6 +36,10 @@ export function RegistroBox(props) {
 
     let handle_clave_iguales = (e) => {
         validar_clave_iguales(set_data, e, data_array)
+    }
+
+    let handle_email = (e) => {
+        validar_email(set_data, e, data_array)
     }
 
     let handle_submit = (e) => {
@@ -68,7 +73,7 @@ export function RegistroBox(props) {
                     </select>
                 </div>
                 <div className={state_registro["cls-6"]}>
-                    <input onBlur={handle_change} title="tipo-2" name="correo" className={state_registro["cls-7"]} type="email" placeholder="Correo Electronico" id="correo" />
+                    <input onBlur={handle_email} title="tipo-2" name="correo" className={state_registro["cls-7"]} type="email" placeholder="Correo Electronico" id="correo" />
                     <input onBlur={verificar_identificacion_data} name="cuenta_id" className={state_registro["cls-7"]} type="text" placeholder="Identificacion" id="cuenta_id" />
                 </div>
                 <div className={state_registro["cls-6"]}>
@@ -192,16 +197,39 @@ async function verificar_identificacion(set_data, event, data_array) {
 
 }
 
+async function validar_email(set_data, event, data_array) {
+   let regexp;
+   //validar correo
+   regexp = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+    var only_email = regexp.exec(event.target.value);
+
+    if (only_email != null) {
+        const respuesta = await obetener_info_email(event.target.value)
+        console.log(respuesta, event.target.value)
+        if (respuesta[0] === undefined) {
+            set_data({ ...data_array, [event.target.name]: event.target.value })
+            change_correct_incorrect(true, event)
+        }
+        else {
+            change_correct_incorrect(false, event)
+        }
+    } else {
+        change_correct_incorrect(false, event)
+    }
+}
 
 async function obetener_info_email(email) {
     try {
-        const respuesta = await fetch(`http://localhost:4500/register/${email}`)
+        const respuesta = await fetch(`http://localhost:4500/register/email/${email}`)
         const data_respuesta = await respuesta.json();
-        return data_respuesta;
+        console.log(data_respuesta , 'data_respuesta')
+        return data_respuesta
     } catch (error) {
         console.log(error)  
     }
 }
+
 
 async function obtener_info_usuario(indentificacion) {
 
