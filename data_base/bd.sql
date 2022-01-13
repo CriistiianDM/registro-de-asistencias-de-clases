@@ -25,7 +25,7 @@ CREATE TABLE personas (
     s_nombre varchar(30),
     p_apellido varchar(30) not null,
     s_apellido varchar(30),
-    dirrecion varchar(30),
+    dirrecion varchar(30) ,
     tipo_persona varchar(10) not null,
     foreign key (identificacion) references cuentas(cuenta_id)
 )
@@ -61,59 +61,10 @@ INSERT INTO asistencias (asistencia_id, identificacion, asistencia, fecha_asiste
 
 /*-----------------------------------------------------------------------------------*/
 
-
-CREATE TABLE estudiantes (
-    estudiante_id varchar(9) UNIQUE not null,
-    identificacion varchar(10)  PRIMARY KEY not null,
-    registro_materias varchar(4) UNIQUE not null,
-    foreign key (registro_materias) references registro_asignaturas(registro_id),
-    foreign key (identificacion) references personas(identificacion)
-)
-
-/* datos de la tabla estudiantes */
-/*-----------------------------------------------------------------------------------*/
-INSERT INTO estudiantes (estudiante_id, identificacion, registro_materias) VALUES
-('202245637', '1001013947', '0001'),
-('202245638', '1001013949', '0002')
-
-/*-----------------------------------------------------------------------------------*/
-
-
-CREATE TABLE administradores (
-    identificacion varchar(10) PRIMARY KEY not null,
-    codigo_administrador varchar(9) UNIQUE not null,
-    foreign key (identificacion) references trabajadores(identificacion)
-)
-
-
-/* datos de la tabla administrador */
-/*-----------------------------------------------------------------------------------*/
-INSERT INTO administradores (identificacion, codigo_administrador) VALUES
-('1001013950', '202212345')
-
-
-/*-----------------------------------------------------------------------------------*/
-
-
-CREATE TABLE profesores (
-    identificacion varchar(10)  PRIMARY KEY not null,
-    codigo_profesor varchar(9) UNIQUE not null,
-    foreign key (identificacion) references trabajadores(identificacion)
-)
-
-
-/* datos de la tabla administrador */
-/*-----------------------------------------------------------------------------------*/
-INSERT INTO profesores (identificacion, codigo_profesor) VALUES
-('1001013948', '202212345')
-
-/*-----------------------------------------------------------------------------------*/
-
-
 CREATE TABLE sedes (
     sede_id varchar(4) UNIQUE PRIMARY KEY not null,
     nombre_sede varchar(100) UNIQUE not null,
-    direccion_sede varchar(70) UNIQUE not null,
+    direccion_sede varchar(70) UNIQUE not null
 )
 
 
@@ -152,15 +103,98 @@ CREATE TABLE trabajadores (
     seguros_medicos_id varchar(4) not null,
     sede_id varchar(4) not null,
     foreign key (sede_id) references sedes(sede_id),
-    foreign key (seguros_medicos_id) references seguros_medicos(seguro_id)
+    foreign key (seguros_medicos_id) references seguros_medicos(seguro_id),
     foreign key (identificacion) references personas(identificacion)
 )
 
 /* datos de la tabla trabajadores */
 /*-----------------------------------------------------------------------------------*/
+
+
 INSERT INTO trabajadores (identificacion, salario, seguros_medicos_id, sede_id) VALUES
 ('1001013948', '10000', '0001', '0001'),
 ('1001013950', '30000', '0003', '0002')
+
+/*-----------------------------------------------------------------------------------*/
+
+CREATE TABLE materias (
+    materia_id varchar(4) UNIQUE PRIMARY KEY not null,
+    nombre_materia varchar(80) UNIQUE not null,
+    requisitos varchar(30) not null,
+    creditos varchar(2) not null,
+    habilitable boolean not null
+)
+
+/* datos de la tabla materias */
+/*-----------------------------------------------------------------------------------*/
+INSERT INTO materias (materia_id, nombre_materia, requisitos, creditos, habilitable) VALUES
+('0001', 'matematicas', '', '2', 'true'),
+('0002', 'lenguaje', '', '2', 'true'),
+('0003', 'ingles', '', '2', 'true'),
+('0004', 'historia', '', '2', 'true'),
+('0005', 'geografia', '', '2', 'true'),
+('0006', 'biologia', '', '2', 'true')
+/*-----------------------------------------------------------------------------------*/
+
+
+CREATE TABLE registro_asignaturas (
+    registro_id varchar(4) UNIQUE PRIMARY KEY not null,
+    m_matriculadas varchar(2) not null
+)
+/* datos de la tabla listados_cursos */
+/*-----------------------------------------------------------------------------------*/
+INSERT INTO registro_asignaturas (registro_id, m_matriculadas) VALUES
+('0001', '02'),
+('0002', '02')
+
+/*-----------------------------------------------------------------------------------*/
+
+
+
+CREATE TABLE profesores (
+    identificacion varchar(10)  PRIMARY KEY not null,
+    codigo_profesor varchar(9) UNIQUE not null,
+    foreign key (identificacion) references trabajadores(identificacion)
+)
+
+
+/* datos de la tabla administrador */
+/*-----------------------------------------------------------------------------------*/
+INSERT INTO profesores (identificacion, codigo_profesor) VALUES
+('1001013948', '202212345')
+
+/*-----------------------------------------------------------------------------------*/
+
+
+CREATE TABLE administradores (
+    identificacion varchar(10) PRIMARY KEY not null,
+    codigo_administrador varchar(9) UNIQUE not null,
+    foreign key (identificacion) references trabajadores(identificacion)
+)
+
+
+/* datos de la tabla administrador */
+/*-----------------------------------------------------------------------------------*/
+INSERT INTO administradores (identificacion, codigo_administrador) VALUES
+('1001013950', '202212345')
+
+
+/*-----------------------------------------------------------------------------------*/
+
+
+CREATE TABLE estudiantes (
+    estudiante_id varchar(9) UNIQUE not null,
+    identificacion varchar(10)  PRIMARY KEY not null,
+    registro_materias varchar(4) UNIQUE not null,
+    foreign key (registro_materias) references registro_asignaturas(registro_id),
+    foreign key (identificacion) references personas(identificacion)
+)
+
+/* datos de la tabla estudiantes */
+/*-----------------------------------------------------------------------------------*/
+INSERT INTO estudiantes (estudiante_id, identificacion, registro_materias) VALUES
+('202245637', '1001013947', '0001'),
+('202245638', '1001013949', '0002')
 
 /*-----------------------------------------------------------------------------------*/
 
@@ -199,25 +233,6 @@ INSERT INTO grupos_cursos (grupo_id, curso_id, grupo_curso, hora_inicio, horario
 /*-----------------------------------------------------------------------------------*/
 
 
-CREATE TABLE materias (
-    materia_id varchar(4) UNIQUE PRIMARY KEY not null,
-    nombre_materia varchar(80) UNIQUE not null,
-    requisitos varchar(30) not null,
-    creditos varchar(2) not null,
-    habilitable boolean not null,
-)
-
-/* datos de la tabla materias */
-/*-----------------------------------------------------------------------------------*/
-INSERT INTO materias (materia_id, nombre_materia, requisitos, creditos, habilitable) VALUES
-('0001', 'matematicas', '', '2', 'true'),
-('0002', 'lenguaje', '', '2', 'true'),
-('0003', 'ingles', '', '2', 'true'),
-('0004', 'historia', '', '2', 'true'),
-('0005', 'geografia', '', '2', 'true'),
-('0006', 'biologia', '', '2', 'true')
-/*-----------------------------------------------------------------------------------*/
-
 CREATE TABLE listados_cursos (
     listado_id varchar(4) UNIQUE PRIMARY KEY not null,
     identificacion_estudiante varchar(10) not null,
@@ -236,15 +251,3 @@ INSERT INTO listados_cursos (listado_id, identificacion_estudiante, registro_id,
 ('0002', '1001013949', '0002', '0002')
 /*-----------------------------------------------------------------------------------*/
 
-
-CREATE TABLE registro_asignaturas (
-    registro_id varchar(4) UNIQUE PRIMARY KEY not null,
-    m_matriculadas varchar(2) not null
-)
-/* datos de la tabla listados_cursos */
-/*-----------------------------------------------------------------------------------*/
-INSERT INTO registro_asignaturas (registro_id, m_matriculadas) VALUES
-('0001', '02'),
-('0002', '02')
-
-/*-----------------------------------------------------------------------------------*/

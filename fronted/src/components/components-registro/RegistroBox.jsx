@@ -2,7 +2,8 @@
  *  @decs import libs
 */
 import React from "react";
-import { useState, useEffect  } from "react";
+import { useState, useEffect } from "react";
+import { Link, Navigate, useNavigation } from 'react-router-dom';
 import style_registro from "../../css/style_registro.css";
 import $ from "jquery";
 
@@ -10,13 +11,13 @@ export function RegistroBox(props) {
 
     const [data_array, set_data] = useState({
         "p_nombre": "",
-        "s_nombre": "",
+        "s_nombre": " ",
         "p_apellido": "",
-        "s_apellido": "",
+        "s_apellido": " ",
         "correo": "",
         "contrasena": "",
         "tipo_persona": "",
-        "dirrecion": "",
+        "dirrecion": "calle 80",
         "cuenta_id": ""
     });
 
@@ -57,7 +58,7 @@ export function RegistroBox(props) {
                 </div>
                 <div className={state_registro["cls-6"]}>
                     <input onBlur={handle_change} title="tipo-1" name="p_apellido" className={state_registro["cls-7"]} type="text" placeholder="Primer Apellido" id="p_apellido" />
-                    <input onBlur={handle_change}  title="tipo-3" name="s_apellido" className={state_registro["cls-7"]} type="text" placeholder="Segundo Apellido" id="s_apellido" />
+                    <input onBlur={handle_change} title="tipo-3" name="s_apellido" className={state_registro["cls-7"]} type="text" placeholder="Segundo Apellido" id="s_apellido" />
                 </div>
                 <label className={state_registro["cls-10"]} >{state_registro["selecionRol"]}</label>
                 <div className={state_registro["cls-9"]}>
@@ -85,13 +86,13 @@ export function RegistroBox(props) {
 
 
 
-function validar_clave_iguales(set_data, event , data_array) {
+function validar_clave_iguales(set_data, event, data_array) {
     //validar que no tenga espacios ni sea nulo
 
     if ($('#input-6').val() === $('#input-5').val()
         && $('#input-6').val() !== "" && $('#input-5').val() !== "") {
 
-        set_data({...data_array , contrasena: $('#input-6').val() });
+        set_data({ ...data_array, contrasena: $('#input-6').val() });
         console.log(data_array)
         for (let i = 5; i < 7; i++) {
             $('#input-' + i + '').removeClass('style-incorrecto');
@@ -130,7 +131,7 @@ function validaciones_info(set_data, event, data_array) {
     console.log(event.target.title)
 
     if (only_words != null) {
-        set_data({...data_array, [event.target.name]: event.target.value })
+        set_data({ ...data_array, [event.target.name]: event.target.value })
         console.log(data_array)
         change_correct_incorrect(true, event)
     } else {
@@ -164,7 +165,6 @@ async function enviar_info(data) {
         })
 
         const data_respuesta = await respuesta.json();
-        console.log(data_respuesta)
 
     } catch (error) {
         console.log(error)
@@ -172,7 +172,7 @@ async function enviar_info(data) {
 
 }
 
-async function verificar_identificacion(set_data, event , data_array) {
+async function verificar_identificacion(set_data, event, data_array) {
     //verifcar que sea solo numeros
     let regexp = /^[0-9]{10}$/;
     var only_numbers = regexp.exec(event.target.value);
@@ -180,7 +180,7 @@ async function verificar_identificacion(set_data, event , data_array) {
     if (only_numbers != null) {
         const respuesta = await obtener_info_usuario(event.target.value)
         if (respuesta[0] === undefined) {
-            set_data({...data_array , [event.target.name]: event.target.value })
+            set_data({ ...data_array, [event.target.name]: event.target.value })
             change_correct_incorrect(true, event)
         }
         else {
@@ -190,6 +190,17 @@ async function verificar_identificacion(set_data, event , data_array) {
         change_correct_incorrect(false, event)
     }
 
+}
+
+
+async function obetener_info_email(email) {
+    try {
+        const respuesta = await fetch(`http://localhost:4500/register/${email}`)
+        const data_respuesta = await respuesta.json();
+        return data_respuesta;
+    } catch (error) {
+        console.log(error)  
+    }
 }
 
 async function obtener_info_usuario(indentificacion) {

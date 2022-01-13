@@ -27,9 +27,8 @@ const postTask = async (req, res) => {
         dirrecion,
         cuenta_id  } = req.body;
     try {
-        await pool.query("INSERT INTO cuentas(cuenta_id,email,contrasena) VALUES ( $1,$2,$3)",[cuenta_id,correo,contrasena]);
-        await pool.query("INSERT INTO personas (identificacion, p_nombre, s_nombre, p_apellido, s_apellido, dirrecion, tipo_persona) VALUES ($1,$2,$3,$4,$5,$6,$7)",[cuenta_id,p_nombre,s_nombre, p_apellido ,
-        s_apellido , dirrecion ,tipo_persona]);
+        await pool.query("INSERT INTO cuentas(cuenta_id,email,contrasena) VALUES ($1,$2,$3)",[cuenta_id,correo,contrasena]);
+        await pool.query("INSERT INTO personas (identificacion, p_nombre, s_nombre, p_apellido, s_apellido, dirrecion, tipo_persona) VALUES ($1,$2,$3,$4,$5,$6,$7)",[cuenta_id,p_nombre,s_nombre, p_apellido ,s_apellido , dirrecion ,tipo_persona]);
     } catch (error) {
         console.log(error);
     
