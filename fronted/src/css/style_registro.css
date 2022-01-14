@@ -137,7 +137,7 @@
     border-style: solid;
     border-width: 0.2em;
     border-color: gray;
-    background-color: rgb(133, 131, 131);
+    background-color: rgb(46, 45, 45);
     color: white;
     font-family: 'Roboto', sans-serif;
     font-size: 1.5em;
@@ -163,7 +163,11 @@
 .style-box-registro:focus {
     outline: none;
 }
-  
+
+.style-bottom_on {
+    background-color: rgb(133, 131, 131);;
+}
+
 #correo , #cuenta_id {
    width: 80% !important;
    align-self: flex-start;

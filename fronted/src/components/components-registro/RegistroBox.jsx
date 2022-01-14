@@ -21,13 +21,15 @@ export function RegistroBox(props) {
         "cuenta_id": ""
     });
 
-    const [data_usuario, set_data_usuario] = useState([])
-      
+    const [data_bottom, set_bottom] = useState({
+        bottom_on: 0
+    })
+
 
     let state_registro = props.properties
 
     let handle_change = (e) => {
-        validaciones_info(set_data, e, data_array)
+        validaciones_info(set_data, e, data_array, data_bottom, set_bottom)
     }
 
     let verificar_identificacion_data = (e) => {
@@ -44,7 +46,14 @@ export function RegistroBox(props) {
 
     let handle_submit = (e) => {
         e.preventDefault();
-        enviar_info(data_array)
+        $('#form div').find('input').each(function (index, event) {
+            //console.log(event)
+            if ($(event).hasClass('style-correcto')) {
+                console.log('incorrecto')
+            }
+        })
+        //console.log(data_bottom)
+        //enviar_info(data_array)
     }
 
     //console.log(state_registro)
@@ -58,7 +67,7 @@ export function RegistroBox(props) {
             <div className={state_registro["cls-3"]}></div>
             <form className={state_registro["cls-5"]} id="form">
                 <div className={state_registro["cls-6"]}>
-                    <input onBlur={handle_change} title="tipo-1" name="p_nombre" className={state_registro["cls-7"]} type="text" placeholder="Primer Nombre" id="p_nombre" />
+                    <input onBlurCapture={handle_change} title="tipo-1" name="p_nombre" className={state_registro["cls-7"]} type="text" placeholder="Primer Nombre" id="p_nombre" />
                     <input onBlur={handle_change} title="tipo-3" name="s_nombre" className={state_registro["cls-7"]} type="text" placeholder="Segundo Nombre" id="s_nombre" />
                 </div>
                 <div className={state_registro["cls-6"]}>
@@ -93,9 +102,15 @@ export function RegistroBox(props) {
 
 function validar_clave_iguales(set_data, event, data_array) {
     //validar que no tenga espacios ni sea nulo
-
+    //validar contraseñas sin espacios
+    let regexp = /^[0-9]*[aA-zZ]*$/;
+    var only_password = regexp.exec(event.target.value);
+    console.log(only_password)
+    console.log(($('#input-6').val()).length)
     if ($('#input-6').val() === $('#input-5').val()
-        && $('#input-6').val() !== "" && $('#input-5').val() !== "") {
+        && $('#input-6').val() !== "" && $('#input-5').val() !== ""
+        && ($('#input-6').val()).length > 0 && ($('#input-6').val()).length < 21
+        && only_password !== null) {
 
         set_data({ ...data_array, contrasena: $('#input-6').val() });
         console.log(data_array)
@@ -115,7 +130,7 @@ function validar_clave_iguales(set_data, event, data_array) {
 
 }
 
-function validaciones_info(set_data, event, data_array) {
+function validaciones_info(set_data, event, data_array, data_bottom, set_bottom) {
 
     let regexp;
 
@@ -129,20 +144,22 @@ function validaciones_info(set_data, event, data_array) {
     }
     else if (event.target.title === 'tipo-3') {
         //validar que sea solo letras y espacios
-        regexp = /^[\sa-zA-Z\s]{1,30}$/;
+        regexp = /^[\sa-zA-Z\s]{0,30}$/;
     }
 
     var only_words = regexp.exec(event.target.value);
-    console.log(event.target.title)
+    console.log((event.target.value).length, only_words)
 
     if (only_words != null) {
-        set_data({ ...data_array, [event.target.name]: event.target.value })
+        set_data({ ...data_array, [event.target.name]: (event.target.value).toLowerCase() })
+        set_bottom({ ...data_bottom, bottom_on: data_bottom.bottom_on + 1 })
         console.log(data_array)
         change_correct_incorrect(true, event)
     } else {
         change_correct_incorrect(false, event)
     }
 
+    console.log(data_array)
 }
 
 function change_correct_incorrect(bool, event) {
@@ -185,7 +202,7 @@ async function verificar_identificacion(set_data, event, data_array) {
     if (only_numbers != null) {
         const respuesta = await obtener_info_usuario(event.target.value)
         if (respuesta[0] === undefined) {
-            set_data({ ...data_array, [event.target.name]: event.target.value })
+            set_data({ ...data_array, [event.target.name]: (event.target.value).toLowerCase() })
             change_correct_incorrect(true, event)
         }
         else {
@@ -197,10 +214,11 @@ async function verificar_identificacion(set_data, event, data_array) {
 
 }
 
+
 async function validar_email(set_data, event, data_array) {
-   let regexp;
-   //validar correo
-   regexp = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    let regexp;
+    //validar correo
+    regexp = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 
     var only_email = regexp.exec(event.target.value);
 
@@ -208,7 +226,7 @@ async function validar_email(set_data, event, data_array) {
         const respuesta = await obetener_info_email(event.target.value)
         console.log(respuesta, event.target.value)
         if (respuesta[0] === undefined) {
-            set_data({ ...data_array, [event.target.name]: event.target.value })
+            set_data({ ...data_array, [event.target.name]: (event.target.value).toLowerCase() })
             change_correct_incorrect(true, event)
         }
         else {
@@ -223,10 +241,10 @@ async function obetener_info_email(email) {
     try {
         const respuesta = await fetch(`http://localhost:4500/register/email/${email}`)
         const data_respuesta = await respuesta.json();
-        console.log(data_respuesta , 'data_respuesta')
+        console.log(data_respuesta, 'data_respuesta')
         return data_respuesta
     } catch (error) {
-        console.log(error)  
+        console.log(error)
     }
 }
 
