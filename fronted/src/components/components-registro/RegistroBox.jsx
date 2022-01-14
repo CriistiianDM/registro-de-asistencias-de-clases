@@ -3,33 +3,38 @@
 */
 import React from "react";
 import { useState, useEffect } from "react";
-import { Link, Navigate, useNavigation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import style_registro from "../../css/style_registro.css";
 import $ from "jquery";
 
+
 export function RegistroBox(props) {
 
+    const navigate = useNavigate();
     const [data_array, set_data] = useState({
         "p_nombre": "",
-        "s_nombre": " ",
+        "s_nombre": null,
         "p_apellido": "",
-        "s_apellido": " ",
+        "s_apellido": null,
         "correo": "",
         "contrasena": "",
-        "tipo_persona": "",
-        "dirrecion": "calle 80",
+        "tipo_persona": "estudiante",
+        "dirrecion": null,
         "cuenta_id": ""
     });
 
     const [data_bottom, set_bottom] = useState({
-        bottom_on: 0
+        bottom_on: false
     })
 
+    useEffect(() => {
+        submit_event()
+    }, [])
 
     let state_registro = props.properties
 
     let handle_change = (e) => {
-        validaciones_info(set_data, e, data_array, data_bottom, set_bottom)
+        validaciones_info(set_data, e, data_array)
     }
 
     let verificar_identificacion_data = (e) => {
@@ -46,14 +51,11 @@ export function RegistroBox(props) {
 
     let handle_submit = (e) => {
         e.preventDefault();
-        $('#form div').find('input').each(function (index, event) {
-            //console.log(event)
-            if ($(event).hasClass('style-correcto')) {
-                console.log('incorrecto')
-            }
-        })
-        //console.log(data_bottom)
-        //enviar_info(data_array)
+        if ($('#' + e.target.id + '').hasClass('style-bottom_on')) {
+        $('#input-6').addClass('on-submit')
+        enviar_info(data_array)
+        navigate('/login')
+        }
     }
 
     //console.log(state_registro)
@@ -90,7 +92,7 @@ export function RegistroBox(props) {
                     <input onBlur={handle_clave_iguales} className={state_registro["cls-7"]} type="password" placeholder="verficar contraseña" id="input-6" />
                 </div>
                 <div className={state_registro["cls-11"]}>
-                    <button onClick={handle_submit} className={state_registro["cls-12"]} type="submit" > {state_registro["enviar"]} </button>
+                    <button onClick={handle_submit} className={state_registro["cls-12"]} type="submit" id="botton-submit"> {state_registro["enviar"]} </button>
                 </div>
             </form>
         </div>
@@ -109,7 +111,7 @@ function validar_clave_iguales(set_data, event, data_array) {
     console.log(($('#input-6').val()).length)
     if ($('#input-6').val() === $('#input-5').val()
         && $('#input-6').val() !== "" && $('#input-5').val() !== ""
-        && ($('#input-6').val()).length > 0 && ($('#input-6').val()).length < 21
+        && ($('#input-6').val()).length > 7 && ($('#input-6').val()).length < 21
         && only_password !== null) {
 
         set_data({ ...data_array, contrasena: $('#input-6').val() });
@@ -130,7 +132,7 @@ function validar_clave_iguales(set_data, event, data_array) {
 
 }
 
-function validaciones_info(set_data, event, data_array, data_bottom, set_bottom) {
+function validaciones_info(set_data, event, data_array) {
 
     let regexp;
 
@@ -152,7 +154,6 @@ function validaciones_info(set_data, event, data_array, data_bottom, set_bottom)
 
     if (only_words != null) {
         set_data({ ...data_array, [event.target.name]: (event.target.value).toLowerCase() })
-        set_bottom({ ...data_bottom, bottom_on: data_bottom.bottom_on + 1 })
         console.log(data_array)
         change_correct_incorrect(true, event)
     } else {
@@ -215,6 +216,33 @@ async function verificar_identificacion(set_data, event, data_array) {
 }
 
 
+function submit_event() {
+    let count = 0;
+
+    const active_botton = setInterval(() => {
+       
+        $('#form div').find('input').each(function (index, event) {
+            if ($(event).hasClass('style-correcto')) {
+                count++;
+            }
+        })
+
+        if ($('#input-6').hasClass('on-submit')) {
+            clearInterval(active_botton)
+        }
+
+        if (count === 8) {
+            $('#form div').find('button').addClass('style-bottom_on')
+        } else {
+            $('#form div').find('button').removeClass('style-bottom_on')
+        }
+        count = 0;
+
+    }, 100);
+
+    return active_botton;
+}
+
 async function validar_email(set_data, event, data_array) {
     let regexp;
     //validar correo
@@ -222,7 +250,7 @@ async function validar_email(set_data, event, data_array) {
 
     var only_email = regexp.exec(event.target.value);
 
-    if (only_email != null) {
+    if (only_email != null && (event.target.value).length < 150) {
         const respuesta = await obetener_info_email(event.target.value)
         console.log(respuesta, event.target.value)
         if (respuesta[0] === undefined) {
