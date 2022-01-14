@@ -131,5 +131,15 @@
       "value-1": "Estudiante",
       "value-2": "Profesor"
     }
+  },
+  "header_admin": {
+    "0": {
+      "cls-1": "box-header",
+      "cls-2": "Attendance-style",
+      "cls-3": "box-login",
+      "cls-4": "style-login",
+      "icon-caja": 1,
+      "title": "Attendance"
+   }
   }
 }

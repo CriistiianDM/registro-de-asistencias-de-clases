@@ -13,6 +13,7 @@ const getTask = async (req, res) => {
     }
 }
 
+
 const getTaskByEmail = async (req, res) => {
     try {
         const { email } = req.params;
@@ -24,6 +25,7 @@ const getTaskByEmail = async (req, res) => {
         console.log(error);
     }
 }
+
 
 //post the express module
 const postTask = async (req, res) => {

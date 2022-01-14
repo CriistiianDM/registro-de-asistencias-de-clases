@@ -5,6 +5,7 @@ import React from 'react';
 import {Inicio} from './components/pages/Inicio';
 import {Login} from './components/pages/Login';
 import {Registro} from './components/pages/Registro';
+import {Admin} from './components/pages/Admin';
 import { style } from './css/style.css';
 import style_header from "./css/style_header.css";
 
@@ -28,6 +29,7 @@ export function App() {
         <Route  path="/" element={<Inicio />} />
         <Route  path="/login" element={<Login />} />
         <Route  path="/register" element={<Registro />} />
+        <Route  path="/admin" element={<Admin />} />
         <Route  path="*" element={<h1>404</h1>} />
       </Routes>
     </Router>
