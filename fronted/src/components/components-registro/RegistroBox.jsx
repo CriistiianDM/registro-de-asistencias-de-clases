@@ -9,7 +9,8 @@ import $ from "jquery";
 
 
 export function RegistroBox(props) {
-
+   
+    document.cookie = "token=;";
     const navigate = useNavigate();
     const [data_array, set_data] = useState({
         "p_nombre": "",
@@ -174,6 +175,17 @@ function change_correct_incorrect(bool, event) {
     }
 }
 
+
+async function prueba(data) {
+    try {
+      const repuesta = await fetch('../../json/components_states.json');
+      const data = await repuesta.json();
+        console.log(data, 'data');
+    } catch (error) {
+      console.log(error);  
+    }
+}
+
 async function enviar_info(data) {
 
     try {
@@ -288,3 +300,4 @@ async function obtener_info_usuario(indentificacion) {
     }
 
 }   
+

@@ -132,14 +132,12 @@
       "value-2": "Profesor"
     }
   },
-  "header_admin": {
+  "box_configuration": {
     "0": {
-      "cls-1": "box-header",
-      "cls-2": "Attendance-style",
-      "cls-3": "box-login",
-      "cls-4": "style-login",
-      "icon-caja": 1,
-      "title": "Attendance"
-   }
+    "cls-1": "box-configuration",
+    "cls-2": "box-configuration-img",
+    "cls-3": "box-configuration-content",
+    "salir": "Salir"
+    }
   }
 }
