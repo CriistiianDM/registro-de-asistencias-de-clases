@@ -26,6 +26,16 @@ const getTaskByEmail = async (req, res) => {
     }
 }
 
+//get email and password
+const getTaskVerify = async (req, res) => {
+    try {
+        const { email, password } = req.params;
+        const result = await pool.query(`SELECT email FROM cuentas WHERE email = '${email}' AND contrasena = '${password}'`);
+        res.json(result.rows);
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 //post the express module
 const postTask = async (req, res) => {
@@ -67,5 +77,6 @@ module.exports = {
     postTask,
     putTask,
     deleteTask,
-    getTaskByEmail
+    getTaskByEmail,
+    getTaskVerify
 }

@@ -9,7 +9,7 @@ import $ from "jquery";
 
 
 export function RegistroBox(props) {
-   
+    
     document.cookie = "token=;";
     const navigate = useNavigate();
     const [data_array, set_data] = useState({
@@ -24,12 +24,9 @@ export function RegistroBox(props) {
         "cuenta_id": ""
     });
 
-    const [data_bottom, set_bottom] = useState({
-        bottom_on: false
-    })
-
     useEffect(() => {
         submit_event()
+         //prueba(data_array)
     }, [])
 
     let state_registro = props.properties
