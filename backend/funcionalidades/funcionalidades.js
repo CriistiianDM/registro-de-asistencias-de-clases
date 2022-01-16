@@ -37,6 +37,18 @@ const getTaskVerify = async (req, res) => {
     }
 }
 
+
+const getTaskData = async (req, res) => {
+    try {
+        const { email } = req.params;
+        const result = await pool.query(`SELECT p_nombre, p_apellido  FROM personas as table1 , cuentas as table2 WHERE table2.email = '${email}'`);
+        res.json(result.rows);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+
 //post the express module
 const postTask = async (req, res) => {
     const {
@@ -78,5 +90,6 @@ module.exports = {
     putTask,
     deleteTask,
     getTaskByEmail,
-    getTaskVerify
+    getTaskVerify,
+    getTaskData
 }

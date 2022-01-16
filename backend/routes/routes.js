@@ -1,6 +1,6 @@
 //librerias
 const { Router } = require('express');
-const {  getTask  , postTask, putTask, deleteTask , getTaskByEmail ,  getTaskVerify} = require('../funcionalidades/funcionalidades');
+const {  getTask  , postTask, putTask, deleteTask , getTaskByEmail ,  getTaskVerify , getTaskData} = require('../funcionalidades/funcionalidades');
 
 //iniciar router
 const router = Router();
@@ -14,6 +14,9 @@ router.get('/register/email/:email', getTaskByEmail);
 
 //metod get 
 router.get('/login/:email/:password', getTaskVerify);
+
+//metod get 
+router.get('/admin/:email', getTaskData);
 
 //method post
 router.post('/register', postTask);

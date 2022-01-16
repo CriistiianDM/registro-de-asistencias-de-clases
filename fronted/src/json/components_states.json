@@ -136,8 +136,26 @@
     "0": {
     "cls-1": "box-configuration",
     "cls-2": "box-configuration-img",
-    "cls-3": "box-configuration-content",
+    "cls-3": "img-configuration",
+    "cls-4": "box-configuration-content",
+    "cls-5": "box-configuration-title",
+    "cls-6": "style-title-content",
+    "cls-7": "box-configuration-button",
     "salir": "Salir"
     }
+  },
+  "box_actions": {
+   "0": {
+     "cls-1": "box-actions",
+     "cls-2": "box-actions-content",
+     "cls-3": "box-actions-icon",
+     "cls-4": "box-actions-icon-content",
+      "cls-5": "box-actions-title",
+     "title-1": "Crear Curso",
+     "title-2": "Crear Profesor",
+     "title-3": "Eliminar Profesor",
+     "title-4": "Eliminar Curso"
+
+   }
   }
 }

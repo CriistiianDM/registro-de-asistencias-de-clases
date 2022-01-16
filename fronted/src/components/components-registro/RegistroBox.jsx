@@ -10,7 +10,7 @@ import $ from "jquery";
 
 export function RegistroBox(props) {
     
-    document.cookie = "token=;";
+    
     const navigate = useNavigate();
     const [data_array, set_data] = useState({
         "p_nombre": "",

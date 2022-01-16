@@ -102,6 +102,7 @@ async function event_click_login(data_array,navigate) {
         const data = await res.json();
         
         if (data[0] !== undefined) {
+         document.cookie = `q=${data[0].email}`;
          navigate('/admin');
         }
         else {

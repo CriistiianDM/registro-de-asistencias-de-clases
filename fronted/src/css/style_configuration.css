@@ -2,7 +2,7 @@
 
 .box-configuration {
     display: grid;
-    grid-template-rows: 40% 60%;
+    grid-template-rows: 45% 55%;
     grid-template-columns: 100%;
     position: fixed;
     top: 6em;
@@ -13,6 +13,7 @@
     border-radius: 1em;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
     overflow: hidden;
+    z-index: 3;
 }
 
 .box-configuration-img {
@@ -27,14 +28,67 @@
     -webkit-border-radius: 50%;
     border-radius: 50%;
     background-color: aqua;
+    overflow: hidden;
+}
+
+.img-configuration {
+    background-image: url('../images/gato.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+}
+
+.img-configuration img {
+    width: 100%;
 }
 
 .box-configuration-content {
     display: grid;
-    grid-template-rows: 25% 25% 50%;
+    grid-template-rows: 30% 35% 35%;
     grid-template-columns: 100%;
     width: 100%;
     height: 100%;
     align-items: center;
     justify-items: center;
+}
+
+.box-configuration-title {
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 50% 50%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.style-title-content {
+    align-self: end;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    color: gray;
+    font-style: italic;
+    font-weight: 600;
+    word-break: break-all;
+    text-align: center;
+    hyphens: auto;
+}
+
+.box-configuration-button {
+    align-self: end;
+    background-color: transparent;
+    font-size: 1.5em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    color: gray;
+    text-align: center;
+    border: none;
+    word-break: break-all;
+    text-align: center;
+    overflow: hidden;
+}
+
+#boton-salir {
+    align-self: stretch ;
 }
