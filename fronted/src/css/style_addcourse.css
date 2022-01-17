@@ -20,7 +20,7 @@
     align-self: center;
     grid-column-start: 2;
     grid-column-end: 2;
-    grid-template-rows: 2% 10% 15% 10% 68%;
+    grid-template-rows: 2% 10% 15% 10% 20% 15% 33%;
     grid-template-columns: 100%;
     background-color: white;
     width: 97%;
@@ -45,11 +45,11 @@
     align-self: flex-end;
     width: 80%;
     height: 80%;
-    background-color: rgb(182, 187, 187);
+    background-color: transparent;
     border-radius: 2em;
     border-style: solid;
     border-color: cyan;
-    color: white;
+    color: rgb(143, 140, 140);
     font-size: 1.5em;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
@@ -77,6 +77,53 @@
     font-family: 'Roboto', sans-serif;
 }
 
+.style-input-horario {
+    justify-self: center;
+    align-self: flex-end;
+    border-radius: 1em;
+    border-style: solid;
+    border-color: cyan;
+    color: gray;
+    font-size: 1.5em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    width: 90%;
+    height: 80%;
+}
+
+.style-bottom-input-guardar {
+    justify-self: center;
+    align-self: flex-start;
+    width: 30%;
+    height: 40%;
+    background-color: rgba(26, 26, 196, 0.87);
+    border-radius: 2em;
+    border-style: solid;
+    border-color: cyan;
+    color: white;
+    font-size: 1.5em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.style-bottom-off {
+    background-color: gray;
+}
+
+.style-correcto {
+    border-color: green !important;
+}
+
+.style-incorrecto {
+    border-color: red !important;
+}
+
+.style-input-horario:focus {
+    outline: none;
+}
+
 .style-box-input-option-materias:focus {
     outline: none;
 }
@@ -95,4 +142,19 @@
 #course-2 {
     grid-row-start: 4;
     grid-row-end: 4;
+}
+
+#course-3 {
+     grid-row-start: 5;
+    grid-row-end: 5;   
+}
+
+#course-4 {
+    grid-row-start: 6;
+    grid-row-end: 6;
+}
+
+#course-5 {
+    grid-row-start: 7;
+    grid-row-end: 7;
 }

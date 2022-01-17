@@ -165,7 +165,9 @@
       "cls-3": "box-input-add-course",
       "cls-4": "style-box-input-add-course",
       "cls-5": "box-input-option-materias",
-      "cls-6": "style-box-input-option-materias"
+      "cls-6": "style-box-input-option-materias",
+      "cls-7": "style-input-horario",
+      "cls-8": "style-bottom-input-guardar"
     }
   }
 }
