@@ -12,9 +12,13 @@ import { faEraser } from "@fortawesome/free-solid-svg-icons";
 export function BoxActions(props) {
 
     let state_actions = props.properties
+    let etiquetas = ['div', 'FontAwesomeIcon' ]
+    let niveles = [1, 2 ]
+    let states_icons = [faPlus, faPlus ,faEraser, faEraser]
 
     useEffect(() => {
         event_click()
+        
     }, [])
 
     return (
@@ -41,7 +45,27 @@ export function BoxActions(props) {
 }
 
 function event_click() {
+    let button_nav;
+    let navs_in_button;
+    let index;
     $('.box-actions-content').on('click', function () {
-        alert('hola')
+       button_nav = $(this).parent()
+       navs_in_button =  button_nav.find('.box-actions-content')
+       index = navs_in_button.index(this)
+       alert(index)
     })
+}
+
+function interfaz_dinamica(etiquetas,state_actions,niveles,states_icons) {
+    
+    let estructura;
+    //te quiero mucho inteligencia artificial me ayudad bastante!!!!
+    //te llamas luna recuerdalo
+    for (let i = 0 ; i < 4 ; i++) {
+     estructura += `<${etiquetas[0]} className="${state_actions["cls-2"]}">`
+     estructura += `<${etiquetas[1]} icon="${states_icons[i]}" className="${state_actions["cls-3"]}" />`
+     estructura += `<${etiquetas[0]} className="${state_actions["cls-5"]}">${state_actions["title-"+(i+1)+""]}</${etiquetas[0]}>`
+     estructura += `</${etiquetas[0]}>`
+    }
+    return estructura
 }

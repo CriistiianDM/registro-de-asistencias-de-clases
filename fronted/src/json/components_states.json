@@ -150,12 +150,22 @@
      "cls-2": "box-actions-content",
      "cls-3": "box-actions-icon",
      "cls-4": "box-actions-icon-content",
-      "cls-5": "box-actions-title",
+     "cls-5": "box-actions-title",
      "title-1": "Crear Curso",
      "title-2": "Crear Profesor",
      "title-3": "Eliminar Profesor",
      "title-4": "Eliminar Curso"
 
    }
+  },
+  "add_course": {
+    "0": {
+      "cls-1": "box-add-course",
+      "cls-2": "box-add-course-content",
+      "cls-3": "box-input-add-course",
+      "cls-4": "style-box-input-add-course",
+      "cls-5": "box-input-option-materias",
+      "cls-6": "style-box-input-option-materias"
+    }
   }
 }

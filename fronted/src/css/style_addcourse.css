@@ -1,0 +1,98 @@
+
+
+
+.box-add-course {
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 25% 50% 25%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+    overflow: hidden;
+    background-color: rgba(139, 137, 137, 0.897);
+}
+
+.box-add-course-content {
+    display: grid;
+    justify-self: center;
+    align-self: center;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-template-rows: 2% 10% 15% 10% 68%;
+    grid-template-columns: 100%;
+    background-color: white;
+    width: 97%;
+    height: 97%;
+    border-radius: 2em;
+    overflow: hidden;
+}
+
+.box-input-add-course {
+    justify-self: center;
+    align-self: center;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 50% 50%;
+    width: 100%;
+    height: 100%;
+}
+
+
+.style-box-input-add-course {
+    justify-self: center;
+    align-self: flex-end;
+    width: 80%;
+    height: 80%;
+    background-color: rgb(182, 187, 187);
+    border-radius: 2em;
+    border-style: solid;
+    border-color: cyan;
+    color: white;
+    font-size: 1.5em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.box-input-option-materias {
+    grid-row-start: 3;
+    grid-row-end: 3;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+.style-box-input-option-materias {
+    justify-self: center;
+    align-self: center;
+    width: 90%;
+    height: 40%;
+    border-style: solid;
+    border-color: cyan;
+    font-size: 1.5em;
+    font-family: 'Roboto', sans-serif;
+}
+
+.style-box-input-option-materias:focus {
+    outline: none;
+}
+
+.style-box-input-add-course:focus {
+    outline: none;
+}
+
+#course-1 {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+
+#course-2 {
+    grid-row-start: 4;
+    grid-row-end: 4;
+}

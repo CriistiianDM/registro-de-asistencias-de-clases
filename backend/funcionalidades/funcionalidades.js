@@ -48,6 +48,15 @@ const getTaskData = async (req, res) => {
     }
 }
 
+const getTaskSubjects = async (req, res) => {
+    try {
+        const result = await pool.query(`SELECT nombre_materia , materia_id FROM materias`);
+        console.log(result.rowCount, 'hola');
+        res.json(result.rows);
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 //post the express module
 const postTask = async (req, res) => {
@@ -91,5 +100,6 @@ module.exports = {
     deleteTask,
     getTaskByEmail,
     getTaskVerify,
-    getTaskData
+    getTaskData,
+    getTaskSubjects
 }

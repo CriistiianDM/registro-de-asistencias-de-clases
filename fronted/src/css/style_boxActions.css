@@ -26,6 +26,7 @@
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
 }
 
+
 .box-actions-icon {
     justify-self: center;
     align-self: center;
@@ -34,6 +35,7 @@
     width: 100%;
     height: 100%;
 }
+
 
 .box-actions-title {
     justify-self: center;
