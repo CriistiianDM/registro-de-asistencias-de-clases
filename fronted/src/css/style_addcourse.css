@@ -1,6 +1,5 @@
 
 
-
 .box-add-course {
     display: grid;
     grid-template-rows: 100%;
@@ -13,6 +12,7 @@
     overflow: hidden;
     background-color: rgba(139, 137, 137, 0.897);
 }
+
 
 .box-add-course-content {
     display: grid;
@@ -96,7 +96,7 @@
     justify-self: center;
     align-self: flex-start;
     width: 30%;
-    height: 40%;
+    height: 27%;
     background-color: rgba(26, 26, 196, 0.87);
     border-radius: 2em;
     border-style: solid;

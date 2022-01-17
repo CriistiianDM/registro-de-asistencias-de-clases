@@ -9,7 +9,7 @@ import $ from "jquery";
 
 
 export function RegistroBox(props) {
-    
+
     
     const navigate = useNavigate();
     const [data_array, set_data] = useState({
@@ -160,6 +160,7 @@ function validaciones_info(set_data, event, data_array) {
 
     console.log(data_array)
 }
+
 
 function change_correct_incorrect(bool, event) {
     if (bool) {
