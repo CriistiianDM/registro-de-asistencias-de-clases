@@ -19,14 +19,12 @@ export function AddCourse(props) {
         maximo_estudiantes: "",
         grupo_curso: "",
         hora_inicio: "",
-        grupo_id: "",
         horario_curso: ""
-
     });
     
 
     useEffect(() => {
-         //verificar_toda_info()
+         verificar_toda_info()
          get_subjects(data_course,set_course)
          get_professors()
          //console.log(data_course)
@@ -38,12 +36,13 @@ export function AddCourse(props) {
 
     let handle_submit = (e) => {
         console.log(data_course)
+        send_data(data_course)
     }
 
     return (
 
         <div className={state_add_course["cls-1"]}>
-           <form className={state_add_course["cls-2"]} id="form">
+           <div className={state_add_course["cls-2"]} id="form1">
                 <div className={state_add_course["cls-3"]} id="course-1">
                      <input onChange={handle_change} title='type-1' name="curso_id" type="text" className={state_add_course["cls-4"]} placeholder="Codigo curso" id="input-add-1" />
                      <input onChange={handle_change} title='type-2' name="grupo_curso" type="text"className={state_add_course["cls-4"]} placeholder="Codigo grupo"  id="input-add-2" />
@@ -61,14 +60,14 @@ export function AddCourse(props) {
                     <input  onChange={handle_change} name="horario_curso" title='type-3' type="text" className={state_add_course["cls-7"]} placeholder="Horario Curso" id="input-add-5" />
                 </div>
                 <div className={state_add_course["cls-5"]} id="course-4"> 
-                <select className={state_add_course["cls-6"]} >
-                        <option disabled value="" id="option-1">Seleccione un profesor</option>
+                <select onClick={handle_change} name="profesor_id" title="type-5" className={state_add_course["cls-6"]} id="justo">
+                        <option disabled value="" id="option-15">Seleccione un profesor</option>
                 </select>
                 </div>
                 <div className={state_add_course["cls-5"]} id="course-5">
                     <button onClick={handle_submit} className={state_add_course["cls-8"]} type="submit"> Guardar </button>
                 </div>
-           </form>
+           </div>
         </div>
         
     );
@@ -77,7 +76,7 @@ export function AddCourse(props) {
 
 async function send_data(data_course) {
     try {
-        const res = await fetch('http://localhost:4500/api/cursos', {
+        const res = await fetch('http://localhost:4500/course/admin', {
             method: 'POST',
             body: JSON.stringify(data_course),
             headers: {
@@ -110,7 +109,7 @@ function verificacion_info(data_course, set_course , e) {
     }
     else if (e.target.title === 'type-3') {
         //verificar texto con numeros
-        regexp = /^[a-zA-Z0-9]+$/;
+        regexp = /^[\sa-zA-Z0-9]+$/;
         size = 120;
     }
     else if (e.target.title === 'type-4') {
@@ -118,11 +117,16 @@ function verificacion_info(data_course, set_course , e) {
         regexp = /^[0-9]{2}:[0-9]{2}$/;
         size = 5;
     }
+    else if (e.target.title === 'type-5') {
+        //verificar identificacion
+        regexp = /^[0-9]{10}$/;
+        size = 10;
+    }
 
     const value = e.target.value;
     const validacion = regexp.exec(value);
 
-    console.log(validacion)
+    console.log(validacion,value)
     if (validacion !== null) {
         change_correct_incorrect(true, e)
         set_course({...data_course, [e.target.name]: value})
@@ -147,25 +151,25 @@ function verificar_toda_info() {
 
     const active_botton = setInterval(() => {
         //console.log(count)
-        $('#form div').find('input').each(function (index, event) {
+        $('#form1 div').find('input').each(function (index, event) {
             
             if ($(event).hasClass('style-correcto')) {
                 count++;
             }
         })
     
-        console.log(count)
+        //console.log(count)
         if ($('#course-1').hasClass('on-submit')) {
             clearInterval(active_botton)
             console.log('entro')
         }
 
         if (count === 5) {
-            console.log('entro')
-            $('#form div').find('button').removeClass('style-bottom-off')
+            //console.log('entro')
+            $('#form1 div').find('button').removeClass('style-bottom-off')
         } else {
             console.log('no entro')
-            $('#form div').find('button').addClass('style-bottom-off')
+            $('#form1 div').find('button').addClass('style-bottom-off')
         }
         count = 0;
 
@@ -202,7 +206,8 @@ async function get_professors() {
       
         if (data[0] !== undefined) {
             for (const name of data) {
-                $("#option-1").after(`<option value="${name.identificacion}">${name.nombre + name.apellido}</option>`);
+                $("#option-15").after(`<option value="${name.identificacion}">${name.nombre +' '+ name.apellido}</option>`);
+                console.log(name.identificacion)
             }
         }
 

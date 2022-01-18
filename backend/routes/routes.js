@@ -1,6 +1,6 @@
 //librerias
 const { Router } = require('express');
-const {  getTask  , postTask, putTask, deleteTask , getTaskByEmail ,  getTaskVerify , getTaskData , getTaskSubjects , getTaskTeachers , getTaskSeguros_medicos , getTaskSedes , postTaskTeacher} = require('../funcionalidades/funcionalidades');
+const {  getTask  , postTask, putTask, deleteTask , getTaskByEmail ,  getTaskVerify , getTaskData , getTaskSubjects , getTaskTeachers , getTaskSeguros_medicos , getTaskSedes , postTaskTeacher , postTaskCourse} = require('../funcionalidades/funcionalidades');
 
 //iniciar router
 const router = Router();
@@ -35,6 +35,9 @@ router.post('/register', postTask);
 
 //method post
 router.post('/teacher/admin', postTaskTeacher);
+
+//method post
+router.post('/course/admin', postTaskCourse);
 
 //method put
 router.put('/',  putTask);

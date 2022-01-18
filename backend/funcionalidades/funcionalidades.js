@@ -129,16 +129,36 @@ const postTaskTeacher = async (req, res) => {
             seguros_medicos_id,
             sede_id,
             codigo_profesor } = req.body;
-              //console.log(req.body);
-           await pool.query("INSERT INTO cuentas(cuenta_id,email,contrasena) VALUES ($1,$2,$3)", [identificacion, email, contrasena]);
-           await pool.query("INSERT INTO personas (identificacion, p_nombre, s_nombre, p_apellido, s_apellido, dirrecion, tipo_persona) VALUES ($1,$2,$3,$4,$5,$6,$7)", [identificacion, p_nombre, s_nombre, p_apellido, s_apellido, dirrecion, tipo_persona]);
-           await pool.query("INSERT INTO trabajadores (identificacion, salario, seguros_medicos_id, sede_id) VALUES ($1,$2,$3,$4)", [identificacion, salario, seguros_medicos_id, sede_id]);
-           await pool.query("INSERT INTO profesores (identificacion, codigo_profesor) VALUES ($1,$2)", [identificacion, codigo_profesor]);
+        //console.log(req.body);
+        await pool.query("INSERT INTO cuentas(cuenta_id,email,contrasena) VALUES ($1,$2,$3)", [identificacion, email, contrasena]);
+        await pool.query("INSERT INTO personas (identificacion, p_nombre, s_nombre, p_apellido, s_apellido, dirrecion, tipo_persona) VALUES ($1,$2,$3,$4,$5,$6,$7)", [identificacion, p_nombre, s_nombre, p_apellido, s_apellido, dirrecion, tipo_persona]);
+        await pool.query("INSERT INTO trabajadores (identificacion, salario, seguros_medicos_id, sede_id) VALUES ($1,$2,$3,$4)", [identificacion, salario, seguros_medicos_id, sede_id]);
+        await pool.query("INSERT INTO profesores (identificacion, codigo_profesor) VALUES ($1,$2)", [identificacion, codigo_profesor]);
         //await pool.query("INSERT INTO profesores (identificacion, profesor_id, sede_id, materia_id, seguro_id) VALUES ($1,$2,$3,$4,$5)", [identificacion, profesor_id, sede_id, materia_id, seguro_id]);
     } catch (error) {
         console.log(error);
     }
 
+}
+
+const postTaskCourse = async (req, res) => {
+    try {
+        const {       
+        curso_id,
+        materia_id,
+        profesor_id,
+        maximo_estudiantes,
+        grupo_curso,
+        hora_inicio,
+        horario_curso } = req.body;
+        console.log(req.body);
+
+        await pool.query("INSERT INTO cursos (curso_id, materia_id, profesor_id, maximo_estudiantes) VALUES ($1,$2,$3,$4)", [curso_id, materia_id, profesor_id, maximo_estudiantes]);
+        await pool.query("INSERT INTO grupos_cursos (grupo_id, curso_id, grupo_curso, hora_inicio, horario_curso) VALUES ($1,$2,$3,$4,$5)", [curso_id, curso_id, grupo_curso, hora_inicio, horario_curso]);
+
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 //put the express module
@@ -164,5 +184,6 @@ module.exports = {
     getTaskTeachers,
     getTaskSeguros_medicos,
     getTaskSedes,
-    postTaskTeacher
+    postTaskTeacher,
+    postTaskCourse
 }
