@@ -71,12 +71,9 @@ CREATE TABLE sedes (
 /* datos de la tabla sedes */
 /*-----------------------------------------------------------------------------------*/
 INSERT INTO sedes (sede_id, nombre_sede, direccion_sede) VALUES
-('0001', 'buga', 'calle 1')
-INSERT INTO sedes (sede_id, nombre_sede, direccion_sede) VALUES
-('0002', 'cartago', 'calle 2')
-INSERT INTO sedes (sede_id, nombre_sede, direccion_sede) VALUES
-('0003', 'yumbo', 'calle 3')
-INSERT INTO sedes (sede_id, nombre_sede, direccion_sede) VALUES
+('0001', 'buga', 'calle 1'),
+('0002', 'cartago', 'calle 2'),
+('0003', 'yumbo', 'calle 3'),
 ('0004', 'zarzal', 'calle 4')
 /*-----------------------------------------------------------------------------------*/
 
@@ -148,7 +145,6 @@ INSERT INTO registro_asignaturas (registro_id, m_matriculadas) VALUES
 ('0002', '02')
 
 /*-----------------------------------------------------------------------------------*/
-
 
 
 CREATE TABLE profesores (

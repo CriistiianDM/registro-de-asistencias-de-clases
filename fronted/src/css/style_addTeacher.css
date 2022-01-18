@@ -1,0 +1,113 @@
+
+.box-add-teacher {
+    display: none;
+    grid-template-rows: 100%;
+    grid-template-columns: 25% 50% 25%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;   
+    background-color: rgba(139, 137, 137, 0.897);
+    z-index: 46;
+    overflow: hidden;
+}
+
+.box-add-teacher-content {
+    display: grid;
+    justify-self: center;
+    align-self: center;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-template-rows: 2% 15% 15% 15% 15% 13% 13% 22%;
+    grid-template-columns: 100%;
+    background-color: white;
+    width: 97%;
+    height: 97%;
+    border-radius: 2em;
+    overflow: hidden;
+}
+
+.box-input-add-teacher {
+    grid-row-start: 2;
+    justify-self: center;
+    align-self: center;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-rows: 100%;
+    grid-template-columns: 50% 50%;
+    overflow: hidden;
+}
+
+.style-box-input-add-teacher {
+    justify-self: center;
+    align-self: flex-end;
+    width: 80%;
+    height: 60%;
+    background-color: transparent;
+    border-radius: 2em;
+    border-style: solid;
+    border-color: cyan;
+    color: rgb(143, 140, 140);
+    font-size: 1.5em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.style-box-input-add-teacher:focus {
+    outline: none;
+}
+
+.box-input-option-eps {
+    grid-row-start: 6;
+    grid-row-end: 6;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+.style-box-input-option-eps {
+    justify-self: center;
+    align-self: center;
+    width: 90%;
+    height: 40%;
+    border-style: solid;
+    border-color: cyan;
+    font-size: 1.5em;
+    font-family: 'Roboto', sans-serif;
+}
+
+.style-box-input-option-eps:focus {
+    outline: none;
+}
+
+#bottom-teacher-1 {
+    height: 40%;
+}
+
+#teacher-1 {
+    grid-row-start: 3;
+}
+
+#teacher-2 {
+    grid-row-start: 4;
+}
+
+#teacher-3 {
+    grid-row-start: 7;
+    grid-row-end: 7;
+}
+
+#teacher-4 {
+    grid-row-start: 8;
+    grid-row-end: 8;
+}
+
+#teacher-7 {
+    grid-row-start: 5;
+    grid-row-end: 5;
+}

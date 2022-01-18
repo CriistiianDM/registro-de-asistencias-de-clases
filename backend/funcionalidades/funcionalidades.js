@@ -58,9 +58,10 @@ const getTaskSubjects = async (req, res) => {
     }
 }
 
+
 const getTaskTeachers = async (req, res) => {
     try {
-        const result = await pool.query(`SELECT p_nombre as nombre, p_apellido as apellido , profesores.identificacion  FROM  personas, profesores`);
+        const result = await pool.query(`SElECT  p_nombre as nombre, p_apellido as apellido , identificacion FROM personas WHERE personas.tipo_persona ~ 'profesor'`);
         console.log(result.rowCount, 'hola');
         res.json(result.rows);
     } catch (error) {
@@ -68,6 +69,26 @@ const getTaskTeachers = async (req, res) => {
     }
 }
 
+
+const getTaskSeguros_medicos = async (req, res) => {
+    try {
+        const result = await pool.query(`SELECT seguro_id, eps FROM seguros_medicos`);
+        console.log(result.rowCount, 'hola');
+        res.json(result.rows);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const getTaskSedes = async (req, res) => {
+    try {
+        const result = await pool.query(`SELECT sede_id, nombre_sede FROM sedes`);
+        console.log(result.rowCount, 'hola');
+        res.json(result.rows);
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 //post the express module
 const postTask = async (req, res) => {
@@ -92,6 +113,33 @@ const postTask = async (req, res) => {
 
 }
 
+const postTaskTeacher = async (req, res) => {
+    try {
+        const {
+            identificacion,
+            p_nombre,
+            s_nombre,
+            p_apellido,
+            s_apellido,
+            dirrecion,
+            tipo_persona,
+            email,
+            contrasena,
+            salario,
+            seguros_medicos_id,
+            sede_id,
+            codigo_profesor } = req.body;
+              //console.log(req.body);
+           await pool.query("INSERT INTO cuentas(cuenta_id,email,contrasena) VALUES ($1,$2,$3)", [identificacion, email, contrasena]);
+           await pool.query("INSERT INTO personas (identificacion, p_nombre, s_nombre, p_apellido, s_apellido, dirrecion, tipo_persona) VALUES ($1,$2,$3,$4,$5,$6,$7)", [identificacion, p_nombre, s_nombre, p_apellido, s_apellido, dirrecion, tipo_persona]);
+           await pool.query("INSERT INTO trabajadores (identificacion, salario, seguros_medicos_id, sede_id) VALUES ($1,$2,$3,$4)", [identificacion, salario, seguros_medicos_id, sede_id]);
+           await pool.query("INSERT INTO profesores (identificacion, codigo_profesor) VALUES ($1,$2)", [identificacion, codigo_profesor]);
+        //await pool.query("INSERT INTO profesores (identificacion, profesor_id, sede_id, materia_id, seguro_id) VALUES ($1,$2,$3,$4,$5)", [identificacion, profesor_id, sede_id, materia_id, seguro_id]);
+    } catch (error) {
+        console.log(error);
+    }
+
+}
 
 //put the express module
 const putTask = (req, res) => {
@@ -113,5 +161,8 @@ module.exports = {
     getTaskVerify,
     getTaskData,
     getTaskSubjects,
-    getTaskTeachers
+    getTaskTeachers,
+    getTaskSeguros_medicos,
+    getTaskSedes,
+    postTaskTeacher
 }

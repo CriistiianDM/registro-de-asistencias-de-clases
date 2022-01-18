@@ -169,5 +169,16 @@
       "cls-7": "style-input-horario",
       "cls-8": "style-bottom-input-guardar"
     }
+  },
+  "add_teacher": {
+    "0": {
+      "cls-1": "box-add-teacher",
+      "cls-2": "box-add-teacher-content",
+      "cls-3": "box-input-add-teacher",
+      "cls-4": "style-box-input-add-teacher",
+      "cls-5": "box-input-option-eps",
+      "cls-6": "style-box-input-option-eps",
+      "cls-7": "style-bottom-input-guardar"
+    }
   }
 }

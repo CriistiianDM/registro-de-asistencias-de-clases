@@ -26,7 +26,7 @@ export function AddCourse(props) {
     
 
     useEffect(() => {
-         verificar_toda_info()
+         //verificar_toda_info()
          get_subjects(data_course,set_course)
          get_professors()
          //console.log(data_course)
